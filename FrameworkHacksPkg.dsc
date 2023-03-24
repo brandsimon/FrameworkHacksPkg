@@ -45,6 +45,4 @@
 
 [Components]
   FrameworkHacksPkg/Library/CrosECLib/CrosECLib.inf
-  FrameworkHacksPkg/Drivers/FrameworkKeyMapDriver/FrameworkKeyMapDriver.inf
   FrameworkHacksPkg/Drivers/ChassisIntrusionPCRMeasurementDriver/ChassisIntrusionPCRMeasurementDriver.inf
-  FrameworkHacksPkg/Application/ECTool/ECTool.inf

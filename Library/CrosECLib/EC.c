@@ -139,33 +139,6 @@ static UCHAR ECChecksumBuffer(char* data, int size) {
 	return sum;
 };
 
-int ECReadMemoryLPC(int offset, void* buffer, int length) {
-	int off = offset;
-	int cnt = 0;
-	UCHAR* s = buffer;
-
-	if(offset + length > EC_MEMMAP_SIZE) {
-		return -1;
-	}
-
-	if(length > 0) {
-		// Read specified bytes directly
-		ECTransfer(EC_XFER_READ, (USHORT)(0x100 + off), buffer, (USHORT)length);
-		cnt = length;
-	} else {
-		// Read a string until we get a \0
-		for(; off < EC_MEMMAP_SIZE; ++off, ++s) {
-			ECTransfer(EC_XFER_READ, (USHORT)(0x100 + off), (char*)s, 1);
-			cnt++;
-			if(!*s) {
-				break;
-			}
-		}
-	}
-
-	return cnt;
-}
-
 int ECSendCommandLPCv3(int command,
                        int version,
                        const void* outdata,
