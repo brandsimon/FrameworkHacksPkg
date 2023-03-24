@@ -1,10 +1,10 @@
 [Defines]
-  INF_VERSION    = 0x00010005
+  INF_VERSION    = 0x00010006
   BASE_NAME      = ChassisIntrusionPCRMeasurementDriver
   FILE_GUID      = C5E8FB89-DB5B-4FE1-B097-FCD00CE28E3A
-  MODULE_TYPE    = UEFI_DRIVER
+  MODULE_TYPE    = UEFI_APPLICATION
   VERSION_STRING = 1.0
-  ENTRY_POINT    = EntryPoint
+  ENTRY_POINT    = UefiMain
 
 [Sources]
   Driver.c
@@ -17,6 +17,6 @@
 [LibraryClasses]
   BaseLib
   TimerLib
-  UefiDriverEntryPoint
+  UefiApplicationEntryPoint
   CrosECLib
   HashLib

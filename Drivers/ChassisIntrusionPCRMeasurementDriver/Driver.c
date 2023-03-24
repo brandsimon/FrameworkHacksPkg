@@ -18,7 +18,7 @@ struct ec_response_chassis_intrusion_control {
 
 EFI_STATUS
 EFIAPI
-EntryPoint(IN EFI_HANDLE ImageHandle, IN EFI_SYSTEM_TABLE* SystemTable) {
+UefiMain(IN EFI_HANDLE ImageHandle, IN EFI_SYSTEM_TABLE* SystemTable) {
 	EFI_STATUS Status = EFI_ABORTED;
 	struct ec_params_chassis_intrusion_control request = {};
 	struct ec_response_chassis_intrusion_control response = {};
